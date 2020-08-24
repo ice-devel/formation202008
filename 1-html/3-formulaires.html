@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Dans la balise head, on place la configuration
+		de la page : titre, metadescription, encodage, etc. -->
+		<title>Les formulaires HTML</title>
+		<!-- dans quel encodage le navigateur doit-il afficher cette page : UTF8 systématiquement -->
+		<meta charset="UTF8">
+	</head>
+
+	<body>
+		<h1>Inscription</h1>
+		<p>Veuillez remplir le formulaire ci-dessous :</p>
+		
+		<form action="" method="POST">
+			<!-- les boutons radio doivent être groupés nsemble avec le même
+			name pour qu'une seule puce ne soit sélectionnable à la fois -->
+			<input id="radio-mme" type="radio" name="radio-civility"/>
+			<!-- on peut lier un label à un champ avec  les attributs id et for,
+			ce qui facilite le choix : on peut cliquer sur le label pour cocher 
+			la case -->
+			<label for="radio-mme">Mme</label>
+			
+			<input type="radio" name="radio-civility"/>M.
+			<br>
+		
+			<label for="input-firstname">Prénom :</label>
+			<input id="input-firstname" type="text" name="firstname"/><br>
+			
+			<label>Nom :</label>
+			<input type="text" required/><br>
+			
+			<input type="radio" name="radio-fruit"/>Banane
+			<input type="radio" name="radio-fruit"/>Kiwi
+			<input type="radio" name="radio-fruit"/>Fraise<br>
+			
+			Votre email :
+			<input type="email" /><br>
+			
+			Votre date de naissance :
+			<input type="date" /><br>
+			
+			Votre pays :
+			<select>
+				<option>France</option>
+				<option>Belgique</option>
+				<option>Italie</option>
+				<option>Espagne</option>
+			</select>
+			<br>
+			
+			Vos types de films préférés :
+			<select multiple>
+				<option>Romance</option>
+				<option>Sci-fi</option>
+				<option>Action</option>
+				<option>Western</option>
+				<option>Thriller</option>
+			</select>
+			<br>
+			
+			Votre téléphone :
+			<input type="tel" /><br>
+			
+			Votre âge :
+			<input type="number" /><br>
+			
+			<input id="checkbox-reglement" type="checkbox" /><label for="checkbox-reglement">Veuillez accepter le réglément</label>
+			<p>Depuis le html5, de nombreux types de champs sont apparus, mais attention
+			tous les navigateurs ne les comprennent pas forcément, ou ils ont une utilité
+			très peu significative.</p>
+			
+			<input type="submit" value="Valider"/>
+		</form>
+	</body>
+</html>
