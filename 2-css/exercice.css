@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+}
+
+h1 {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.bloc-avantage {
+	border: 1px solid;
+	background-color: green;
+}
+
+#container-ul {
+	text-align:center;
+}
+
+ul {
+	display:inline-block;
+}
+
+.flexbox {
+	display: flex;
+	justify-content: space-around;
+}
+
+td {
+	padding: 5px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercice CSS</title>
+		<link href="exercice.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<h1 style="border:1px solid;">Form inscription</h1>
+		
+		<div class="flexbox">
+			<div class="bloc-avantage">
+				Avantage 1
+			</div>
+			<div class="bloc-avantage">
+				Avantage 2
+			</div>
+			<div class="bloc-avantage">
+				Avantage 3
+			</div>
+		</div>
+	
+		<div id="container-ul">
+			<ul>
+				<li>Element 1</li>
+				<li>Element 2</li>
+				<li>Element 3</li>
+			</ul>
+		</div>
+		
+		<!--
+		Formulaire :
+
+		Une civilité (Monsieur, madame)
+
+		Un champ Nom
+		minimum 2 caractère
+		obligatoire
+
+		Un champ adresse
+		obligatoire
+
+		Un champ code postal 
+		5 caractères exactement
+		obligatoire
+
+		Une adresse email
+		format email
+		obligatoire
+
+		Un mot de passe
+		minimum 5 caractères, max 10
+		obligatoire
+
+		Une liste :
+		particulier, professionnel,
+		association
+
+		Une photo
+		format .jpg uniquement
+		-->
+		<div style="border:1px solid;">
+			<form action="" method="GET">
+				<input id="radio-mme" type="radio" name="radio-civility" value="mme"/>
+				<label for="radio-mme">Mme</label>
+				<input id="radio-m" type="radio" name="radio-civility" value="m"/>
+				<label for="radio-mme">M.</label>
+				<br>
+				<table>
+					<tr>
+						<td>
+							<label>Nom</label>
+						</td>
+						<td>
+							<input type="text" minlength="2" name="lastname" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Adresse</label>
+						</td>
+						<td>
+							<input type="text" minlength="2" name="address" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Code postal</label>
+						</td>
+						<td>
+							<input type="text" minlength="5" maxlength="5" name="zipcode" />
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<label>Email</label>
+						</td>
+						<td>
+							<input type="email" name="email" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Mot de passe</label>
+						</td>
+						<td>
+							<input type="password" name="email" minlength="5" maxlength="10" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Statut</label>
+						</td>
+						<td>
+							<select name="status">
+								<option>Particulier</option>
+								<option>Professionnel</option>
+								<option>Association</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Photo</label>
+						</td>
+						<td>
+							<input type="file" accept=".jpg" />
+						</td>
+					</tr>
+				</table>
+				
+				<div style="text-align:right;">
+					<input type="submit" value="Valider"/>
+				</div>				
+			</form>
+		</div>
+		
+		
+		<div>
+			Ne pas utiliser float:right pour placer le bouton à droite. Float sort l'élément du flux et ne sert pas à ça.
+			Il sert à ça : 
+			<a href="https://developer.mozilla.org/fr/docs/Web/CSS/float">
+				https://developer.mozilla.org/fr/docs/Web/CSS/float
+			</a>
+		</div>
+	</body>
+</html>

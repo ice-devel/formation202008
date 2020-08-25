@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Positionnement</title>
+		<style>
+			div {
+				border:1px solid;
+				padding: 10px;
+			}
+			
+			.absolute {
+				position: absolute;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			.fixed {
+				position: fixed;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Positionnement en CSS</h1>
+		
+		<h2>Positionnement static</h2>
+		<p>Les uns à coté des autres ou en dessous des autres, dans l'ordre où ils sont écrits</p>
+		<div>DIV 1</div>
+		<div>DIV 2</div>
+		<div>DIV 3</div>
+		
+		<h2>Positionnement absolute</h2>
+		<p>sorti du flux, positionné avec des coordonnées dont le référentiel est la fenêtre
+		ou le parent absolute/relative le plus proche. Si plusieurs se chevauchent,
+		le dernier défini dans le HTML est au premier plan, ou alors on peut définir manuellement les différents plans grâce à la propriété z-index.</p>
+		<div class="absolute" style="width:50%;right:5px;top:10px;">DIV 4</div>
+		<div class="absolute" style="width:50%;z-index:100">DIV 5</div>
+		<div class="absolute" style="width:50%;color:green">DIV 5bis</div>
+		
+		<h2 style="margin-top:80px">Positionnement relative</h2>
+		<p>toujours dans le flux, mais on peut positionner avec des coordonnées dont le référentiel est lui-même</p>
+		<div class="relative" style="left:20px">DIV 6 (décalé de 20px par rapport à lui-même)</div>
+		<div class="relative" >
+			DIV 7
+			<div class="absolute" style="top:10px;right:5px;">
+				DIV 8
+			</div>
+		</div>
+		
+		<h2>Positionnement fixed</h2>
+		<p>sorti du flux, positionné avec des coordonnées par rapport à ce qui est visible, peu importe la position du scroll.
+		Un menu en fixed sera ainsi toujours visible, peu importe le défilement de la page.</p>
+		<div class="fixed" style="top:0">
+			DIV 9
+		</div>
+	</body>
+</html>
