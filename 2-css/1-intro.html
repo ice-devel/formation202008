@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Intro CSS</title>
+		<style>
+			/* sélecteur par classe */
+			.italicInRed {
+				font-style: italic;
+				color: red;
+			}
+			
+			/* sélecteur par ID */
+			#main-title {
+				font-size:30px;
+				text-decoration: underline;
+			}
+			
+			/* sélecteur par tag */
+			li {
+				text-shadow: 2px 2px 5px #000000;
+			}	
+
+			.green {
+				color:green;
+			}			
+		</style>
+		<link href="style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<h1 id="main-title">Les propriétés CSS</h1>
+		<p>Le <span class="bold">CSS</span> permet de mettre en forme (couleur, taille, position, police) notre HTML</p>
+		<p style="font-weight:bold;">Les propriétés CSS les plus courantes : </p>
+		
+		<ul class="italicInRed">
+			<li>font-size</li>
+			<li>color</li>
+			<li>margin/padding</li>
+			<li>font-weight</li>
+			<li>background-color</li>
+		</ul>
+		
+		<div style="border:1px solid blue;margin:40px;padding:10px;">
+			PARIS PARIS ON T'AIME BIEN
+		</div>
+		
+		<div class="italicInRed green" style="border:1px solid green;text-align:center;">
+			SUPER MARIO BROSSE LUIGI
+		</div>
+	</body>
+	</body>
+</html>
