@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Flex</title>
+
+    <style>
+        .flex {
+          display: flex;
+           margin-top:10px;
+        }
+        div.flex div {
+            border: 1px solid;
+        }
+		
+		
+        .horizontal-reverse {
+            flex-direction: row-reverse;
+        }
+        .vertical {
+            flex-direction: column;
+        }
+        .vertical-reverse {
+            flex-direction: column-reverse;
+        }
+		
+        #width-equal div {
+            flex: 1 1 auto;
+            margin: 0 10px 0 10px;
+        }
+		
+        .big-fixed {
+            flex-wrap: wrap;
+        }
+        .big-fixed div {
+            flex-basis: 200px;
+        }
+        .center {
+            justify-content: center; /* space-between,space-around
+		}
+        .center div {
+            margin-right:20px;
+        }
+        .homepage p {
+
+        }
+        .contact p {
+
+        }
+        .footer p {
+
+        }
+    </style>
+</head>
+
+<body class="homepage">
+    <h1>Flex</h1>
+
+    <div class="flex center">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+    </div>
+
+    <div class="flex" id="width-equal">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+        <div>DIV 4</div>
+    </div>
+
+
+    <div class="flex big-fixed">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+        <div>DIV 4</div>
+    </div>
+
+
+    <div class="flex horizontal-reverse">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+        <div>DIV 4</div>
+    </div>
+
+
+    <div class="flex vertical">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+        <div>DIV 4</div>
+    </div>
+
+    <div class="flex vertical-reverse">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+        <div>DIV 4</div>
+    </div>
+
+</body>
+</html>

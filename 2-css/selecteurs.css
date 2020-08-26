@@ -1,0 +1,76 @@
+/*
+#id
+.class
+div
+*/
+
+/* combinaison de sélecteurs */
+/* cibler uniquement les p qui se trouvent dans un div */
+div p {
+	color: red;
+}
+
+div p span {
+	color: green;
+}
+
+#main {
+	border: 1px solid;
+}
+
+#main .bloc span {
+	font-style: italic;
+}
+
+/* cibler avec sélecteur d'élément qui correspond à plusieurs régles en même temps */
+#main div.bloc span {
+	text-decoration: underline;
+}
+
+#main div.bloc span.bold.active {
+	font-weight:bold;
+}
+
+/* cibler les enfants direct d'un élément */
+#main > div.bloc {
+	border:1px solid green;
+}
+
+/* cibler un élément qui se trouve juste après, dans le même niveau hiérarchique */
+div.bloc ~ span {
+	background-color: purple;
+}
+
+/* cibler un element qui a un attribut particulier peu importe la valeur */
+div[data-color] {
+	color: orange;
+}
+
+/* cibler un element qui a un attribut particulier dont la valeur est "px" */
+div[data-color="px"] {
+	color: yellow;
+}
+/* cibler un element qui a un attribut particulier dont la valeur commence par "p" */
+div[data-color^="p"] {
+	color: yellow;
+}
+/* cibler un element qui a un attribut particulier dont la valeur contient "p" */
+div[data-color*="p"] {
+	color: yellow;
+}
+/* cibler un element qui a deux attributs particuliers */
+div[data-color$="p"][data-test*="p"] {
+	color: yellow;
+}
+
+/* sélecteur liens */
+a:visited, a:active, a:hover {
+	
+}
+/* lors du survol */
+#main:hover {
+	border: 1px solid red;
+}
+
+
+

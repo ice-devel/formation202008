@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>font-size CSS</title>
+		<style>
+			body {
+				font-size:16px;
+			}
+			.px {
+				font-size: 20px;
+			}
+			
+			/* em : ratio par rapport à la font-size du parent */
+			.em {
+				font-size:2em;
+			}
+			
+			/* rem : ratio par rapport à la font-size root (root em)*/
+			.rem {
+				font-size:2.5rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>FONT SIZE en CSS</h1>
+		
+		<div class="px">
+			DIV 1
+		</div>
+		
+		<div class="em">
+			DIV 2
+			<div class="em">DIV 2bis</div>
+		</div>
+		
+		<div class="rem">
+			DIV 3
+			<div class="rem">DIV 3bis</div>
+		</div>
+		
+		<p>
+			L'utilisation des unités em et rem permet de se baser proportionnellement
+			par rapport à la taille initiale du document (rem), ou du parent (em).
+			Ainsi en modifiant la taille initiale, tous les enfants se mettent
+			proportionnellement à jour.
+		</p>
+	</body>
+</html>
