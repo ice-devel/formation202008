@@ -1,0 +1,23 @@
+Pour écrire nos algorithmes cette semaine, nous allons utiliser
+du pseudo-code : une syntaxe particulièr een français sans avoir besoin de coder dans un vrai langage.
+
+Variables
+	chiffre1:entier
+	chiffre2:entier
+	somme:entier
+Début Algorithme
+	demander chiffre1
+	demander chiffre2
+	chiffre1 + chiffre2 donne somme
+	dire somme
+Fin Algorithme
+
+Un algo :
+	- suite d'instruction pour résoudre un problème
+	- si nécessaire, utilisation de variables (qui faut typées)
+	
+I - Variables / Types primitifs
+	- entier  / integer
+	- chaines de caractères / string
+	- booléen / boolean
+	- décimal / float

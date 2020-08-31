@@ -1,0 +1,105 @@
+I - Structures conditionnelles
+A- LE SI (IF)
+
+Algo
+	SI condition est vraie
+	ALORS
+		faire quelquechose
+	SINON
+		faire autre chose
+	FIN SI
+Fin algo
+
+Variables:
+	age:entier
+Algo
+	age = saisir "Quel est votre âge ?" 
+	
+	SI age >= 18
+		afficher "Bonjour"
+		afficher "Paris sportifs | Poker "
+		afficher "se déconnecter"
+	SINON
+		afficher "Vous ne pouvez pas accéder à ce site"
+	FIN SI
+	
+	SI age < 3
+		afficher "Appelle ta mère"
+	FIN SI
+Fin algo
+
+La condition peut être composée de plusieurs conditions
+
+SI 5 == 5 ET 7 > 8
+	// on rentre pas car condition fausse
+FIN SI
+
+SI 5 == 5 OU 7 > 8
+	// on rentre car condition est vraie
+FIN SI
+
+SI 5 == 5 ET (7 > 8 OU 3 > 1)
+
+FIN SI
+
+B- LE SELON
+
+choix = Saisir "Café : 1, Thé : 2, Jus : 3"
+SELON choix
+	CAS 1 
+		préparer café
+		afficher "Voici votre café"
+	CAS 2
+		préparer thé
+		afficher "Voilà le thé"
+	CAS 3
+		préparer le jus
+		afficher "et voilà un p'tit jus de de fruit"
+	DEFAUT	
+		afficher "Apprend à lire"
+FIN SELON
+
+note = Saisir "Quelle note as-tu eue ?"
+SELON note
+	CAS 5
+		afficher "c'est pas très bien quand même nan ?"
+	CAS 10
+	CAS 11
+	CAS 12
+		afficher "ok"
+	CAS 15
+		afficher "pas mal"
+	CAS 20
+		afficher "ok maintenant la suite"
+	DEFAUT
+		afficher "j'ai pas envie de parler"
+FIN SELON
+
+// version avec si
+note = Saisir "Quelle note as-tu eue ?"
+SI note == 5
+	afficher "c'est pas très bien quand même nan ?"
+FIN SI
+
+SI note == 10 OU note == 11 OU note == 12
+	afficher "ok"
+FIN SI
+
+SI note == 15
+FIN SI
+SI note == 20
+FIN SI
+
+SI note != 5 ET note != 10 etc.
+
+// version sinon si
+SI note == 5
+	afficher "c'est pas très bien quand même nan ?"
+SINON SI note == 10 OU note == 11 OU note == 12
+	afficher "ok"
+SINON SI note == 15
+SINON SI note == 20
+	afficher "ok maintenant la suite"
+SINON
+	afficher "j'ai pas envie de parler"
+FIN SI
