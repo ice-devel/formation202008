@@ -1,0 +1,173 @@
+Demander à l’utilisateur deux nombres, et afficher le résultat de la soustraction.
+Variables
+	nb1: entier
+	nb2: entier
+	difference: entier
+Debut algo
+	nb1 = saisir "Veuillez saisir le premier nombre"
+	nb2 = saisir "Veuillez saisir le deuxième nombre"
+	
+	// v1
+	difference = nb1 - nb2
+	afficher difference
+	
+	// v2
+	afficher nb1 - nb2
+Fin algo
+
+Demander à l’utilisateur deux nombres et afficher le résultat de la division. Vérifiez d’abord si la division est possible.
+Variables
+	numerateur: entier
+	denominateur: entier
+	quotient: decimal
+Debut algo
+	numerateur = saisir "Veuillez saisir le premier nombre"
+	denominateur = saisir "Veuillez saisir le deuxième nombre"
+	SI denominateur != 0
+		quotient = numerateur / denominateur
+		afficher quotient
+	SINON
+		afficher "Division par 0 impossible"
+	FIN SI
+Fin algo
+
+Demander à l’utilisateur son âge, et afficher s’il est majeur ou mineur. S’il est mineur, afficher combien d’années il reste avant qu’il soit majeur.
+
+Variables
+	age: entier
+	restant: entier
+Debut algo
+	age = saisir "quel est votre âge ?"
+	SI age < 18
+		afficher "Vous êtes mineur"
+		restant = 18 - age
+		afficher "Il vous reste " CONCAT restant CONCAT " années avant d'être majeur"
+	SINON
+		afficher "Vous êtes majeur"
+	FIN SI
+Fin algo
+
+Demander à l’utilisateur un nom de fruit, lui afficher 
+-	« Cool » dans le cas où il dit « fraise »
+-	« Pas cool » dans le cas où il dit « banane »
+-	« Etrange » dans le cas où il dit « kiwi »
+-	« Comme tu veux » dans tous les autres cas
+Variables
+	fruit: chaine de caractères
+Debut algo
+	fruit = saisir "veuillez choisir un fruit"
+	SELON fruit
+		CAS "fraise"
+			afficher "Cool"
+		CAS "banane"
+			afficher "Pas cool"
+		CAS "kiwi"
+			afficher "Etrange"
+		DEFAUT
+			afficher "Comme tu veux"
+	FIN SELON	
+Fin algo
+
+Demander à l’utilisateur son année de naissance, puis son mois de naissance, et enfin son jour de naissance. Calculer alors précisément son âge en années (on ne veut pas le nombre de mois ni le nombre de jour)
+
+Variables
+	anneeActuelle: entier
+	moisActuel: entier
+	jourActuel: entier
+	anneeNaissance: entier
+	moisNaissance: entier
+	jourNaisssance: entier
+	age: entier
+Debut algo
+	anneeActuelle = year()
+	moisActuel = month()
+	jourActuel = day()
+	
+	anneeNaissance = saisir "Ton année de naissance ?"
+	moisNaissance = saisir "Ton mois de naissance ?"
+	jourNaissance = saisir "Ton jour de naissance ?"
+	
+	// V1
+	SI anneeNaissance == anneeActuelle 
+		afficher "vous avez 0 an"
+	FIN SI
+	
+	SI anneeNaissance < anneeActuelle
+		SI moisNaissance > moisActuel
+			age = anneeActuelle - anneeNaissance - 1
+		FIN SI
+		
+		SI moisNaissance < moisActuel
+			age = anneeActuelle - anneeNaissance
+		FIN SI
+		
+		SI moisNaissance == moisActuel
+			SI jourNaissance > jourActuel
+				age = anneeActuelle - anneeNaissance - 1
+			FIN SI
+			SI jour naissance < jourActuel
+				age = anneeActuelle - anneeNaissance
+			FIN SI
+			SI jourNaissance == jourActuel
+				age = anneeActuelle - anneeNaissance
+			FIN SI
+		FIN SI
+	FIN SI
+	
+	// V2
+	SI moisNaissance > moisActuel
+		age = anneeActuelle - anneeNaissance - 1
+	SINON SI moisNaissance < moisActuel
+		age = anneeActuelle - anneeNaissance
+	SINON SI moisNaissance == moisActuel
+		SI jourNaissance > jourActuel
+			age = anneeActuelle - anneeNaissance - 1
+		SINON SI jour naissance < jourActuel
+			age = anneeActuelle - anneeNaissance
+		SINON SI jourNaissance == jourActuel
+			age = anneeActuelle - anneeNaissance
+		FIN SI
+	FIN SI
+	
+	//V3 
+	SI moisNaissance > moisActuel
+		age = anneeActuelle - anneeNaissance - 1
+	SINON SI moisNaissance < moisActuel
+		age = anneeActuelle - anneeNaissance
+	SINON
+		SI jourNaissance > jourActuel
+			age = anneeActuelle - anneeNaissance - 1
+		SINON SI jour naissance < jourActuel
+			age = anneeActuelle - anneeNaissance
+		SINON
+			age = anneeActuelle - anneeNaissance
+		FIN SI
+	FIN SI
+	
+	// V4
+	SI moisNaissance > moisActuel
+		OU moisNaissance == moisActuel ET jourNaissance > jourActuel
+		age = anneeActuelle - anneeNaissance - 1
+	SINON SI moisNaissance < moisActuel
+		OU moisNaissance == moisActuel ET jourNaissance <= jourActuel
+		age = anneeActuelle - anneeNaissance
+	FIN SI
+	
+	// V5 
+	SI moisNaissance > moisActuel
+		OU moisNaissance == moisActuel ET jourNaissance > jourActuel
+		age = anneeActuelle - anneeNaissance - 1
+	SINON 
+		age = anneeActuelle - anneeNaissance
+	FIN SI
+	
+	// V6
+	age = anneeActuelle - anneeNaissance
+	SI moisNaissance > moisActuel
+		OU moisNaissance == moisActuel ET jourNaissance > jourActuel
+		age = age - 1
+	FIN SI
+	
+	afficher age
+Fin algo
+
