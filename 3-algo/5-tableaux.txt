@@ -1,0 +1,42 @@
+I - Les tableaux
+Les tableaux sont des variables qui peuvent contenir plusieurs valeurs. Ces valeurs sont accessibles grâce à un indice (qui commence à 0).
+
+Variables
+	notes: tableau d'entier
+Algo
+	ajouter 10 dans notes
+	ajouter 15 dans notes
+	
+	afficher notes[0] // affiche 10
+	notes[1] = 16 // modifie la deuxième note 15 par 16 
+	
+	note1
+	note2
+	note3
+	note4 
+	etc..
+	
+	// un seul tableau de notes : une seule variable
+	ajouter 13 dans notes
+	ajouter 15 dans notes
+	ajouter 17 dans notes
+	
+	// liaison avec les boucles
+	// au lieu de faire ça :
+	afficher notes[0]
+	afficher notes[1]
+	afficher notes[2]
+	afficher notes[3]
+	afficher notes[4]
+	
+	// on peut faire ça :
+	POUR i de 0 à 4 PAR PAS DE 1
+		afficher notes[i]
+	FIN POUR 
+	
+	// on peut obtenir le nombre d'un tableau via une fonction
+	POUR i de 0 à LONGUEUR(notes)-1 PAR PAS DE 1
+		afficher notes[i]
+	FIN POUR
+	
+Fin algo

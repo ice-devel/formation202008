@@ -1,0 +1,55 @@
+I - Les booléens
+	
+Variables
+	age: entier
+	estMajeur: booléen
+	texteMajeur: chaine
+Algo
+	age = saisir "Quel est votre âge ?"
+	SI age >= 18
+		estMajeur = vrai
+	SINON
+		estMajeur = faux
+	FIN SI
+	
+		
+	SI vrai
+		// on rentre
+	FIN SI
+	
+	SI faux
+		// on rentre pas
+	FIN SI
+	
+	SI estMajeur == vrai
+	
+	FIN SI
+	
+	SI vrai == vrai : vrai
+	SI faux == vrai : faux
+		// on peut se passer de faire la comparaison en entier
+		// car une condition attend un booléen :
+		// estMajeur est déjà un booléen
+	FIN SI
+
+	// on peut donc simplement écrire :
+	SI estMajeur
+		// on rentre parce qu'on est majeur
+	SINON 
+		// on rentre ici parce qu'on est mineur
+	FIN SI
+	
+	// ternaire (condition ? valeur si vraie : valeur si fausse)
+	SI age >= 18
+		estMajeur = vrai
+	SINON
+		estMajeur = faux
+	FIN SI
+	
+	// une condition est un booléen : vrai ou faux
+	// donc on peut affecter une condition dans une variable
+	texteMajeur = age >= 18 ? "Vous êtes majeur" : "Vous êtes mineur"
+	
+	estMajeur = age >= 18 ? vrai : faux
+	estMajeur = age >= 18
+Fin algo

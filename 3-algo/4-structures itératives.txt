@@ -1,0 +1,40 @@
+Variables
+	chiffre: entier
+	resultat: entier
+Algo
+	chiffre = saisir "Choisissez un chiffre entre 1 et 9"
+	SI chiffre > 0 ET chiffre < 10
+		resultat = chiffre * 1 
+		afficher "1 * " CONCAT chiffre CONCAT "= " CONCAT resultat
+		
+		afficher "2 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 2
+		afficher "3 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 3
+		afficher "4 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 4
+		afficher "5 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 5
+		afficher "6 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 6
+		afficher "7 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 7
+		afficher "8 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 8
+		afficher "9 * " CONCAT chiffre CONCAT "= " CONCAT chiffre * 9
+		
+	SINON
+		afficher "Chiffre incorrect"
+	FIN SI
+FIN ALGO
+
+I - structures itératives
+Une boucle permet de répéter une ou plusieurs instructions un certain de fois.
+
+A- POUR (for)
+initialisation, condition d'arrêt, incrémentation
+POUR i de 0 à 100 PAR PAS DE 1
+	afficher "Je dois pas tricher"
+FIN POUR
+
+POUR i de 1 à 9 PAR PAS DE 1
+	afficher i CONCAT " * " CONCAT chiffre CONCAT " = " CONCAT chiffre * i
+FIN POUR 
+
+
+
+
+

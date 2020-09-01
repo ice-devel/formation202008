@@ -79,9 +79,9 @@ Variables
 	jourNaisssance: entier
 	age: entier
 Debut algo
-	anneeActuelle = year()
-	moisActuel = month()
-	jourActuel = day()
+	anneeActuelle = year() 2020
+	moisActuel = month() 8
+	jourActuel = day() 31
 	
 	anneeNaissance = saisir "Ton année de naissance ?"
 	moisNaissance = saisir "Ton mois de naissance ?"
@@ -171,3 +171,69 @@ Debut algo
 	afficher age
 Fin algo
 
+
+1 - Demander à l’utilisateur de saisir 5 notes
+Afficher la moyenne de ces notes
+o	Version sans boucle
+Variables
+Algo
+	// v1
+	note1 = saisir "Note 1"
+	note2 = saisir "Note 2"
+	note3 = saisir "Note 3"
+	note4 = saisir "Note 4"
+	note5 = saisir "Note 5"
+	moyenne = (note1 + note2 + note3 + note4 + note5) / 5
+	afficher moyenne
+	
+	note = saisir "Note 1"
+	somme = note
+	
+	note = saisir "Note 2"
+	somme = somme + note
+	
+	note = saisir "Note 3"
+	somme = somme + note
+	note = saisir "Note 4"
+	somme = somme + note
+	note = saisir "Note 5"
+	somme = somme + note
+	moyenne = somme / 5
+Fin algo
+
+o	Version avec boucle
+Variables
+	note: entier
+	somme: entier
+Algo
+	somme = 0
+	POUR indice de 0 à 4 PAR PAS DE 1
+		note = saisir "Note " CONCAT indice + 1
+		somme = somme + note
+	FIN POUR 
+
+	moyenne = somme / 5
+	
+	// centraliser le nombre de notes
+	nbNotes = 100
+	somme = 0
+	POUR indice de 0 à nbNotes-1 PAR PAS DE 1
+		note = saisir "Note " CONCAT indice + 1
+		somme = somme + note
+	FIN POUR 
+
+	moyenne = somme / nbNotes
+Fin algo
+	
+2- Demander à l’utilisateur de saisir des notes.
+C’est lui qui décide quand la saisie s’arrête en tapant -1
+Afficher la moyenne de ces notes
+
+Variables
+Algo
+	somme = 0
+	TANT QUE 
+		note = saisir "Note " CONCAT indice + 1
+		somme = somme + note
+	FIN TANT QUE 
+Fin algo
