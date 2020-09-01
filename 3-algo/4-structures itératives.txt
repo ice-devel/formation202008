@@ -30,9 +30,39 @@ POUR i de 0 à 100 PAR PAS DE 1
 	afficher "Je dois pas tricher"
 FIN POUR
 
+// exemple exercice avec pour
 POUR i de 1 à 9 PAR PAS DE 1
 	afficher i CONCAT " * " CONCAT chiffre CONCAT " = " CONCAT chiffre * i
 FIN POUR 
+
+B- TANT QUE (while)
+
+// exemple exercice avec tant que
+i = 1
+TANT QUE i < 9
+	afficher i CONCAT " * " CONCAT chiffre CONCAT " = " CONCAT chiffre * i
+	i = i + 1
+FIN TANT QUE
+
+// autre exemple
+random = RAND(1, 20)
+somme = 0 + random
+
+TANT QUE somme < 100
+	random = RAND(1, 20)
+	somme = somme + random
+FIN TANT QUE
+
+C- REPETER JUSQU'A (do while)
+
+i = 1
+REPETER
+	afficher i CONCAT " * " CONCAT chiffre CONCAT " = " CONCAT chiffre * i
+	i = i + 1
+TANT QUE i <= 9
+
+
+
 
 
 

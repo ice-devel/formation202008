@@ -38,5 +38,16 @@ Algo
 	POUR i de 0 à LONGUEUR(notes)-1 PAR PAS DE 1
 		afficher notes[i]
 	FIN POUR
-	
 Fin algo
+
+Exo 6 :
+Demander à l’utilisateur de saisir des notes, et de taper -1 pour stopper.
+Stocker chacune des notes saisies dans un tableau. Ensuite (une fois sorti de la boucle, après la saisie -1),
+Afficher chacune des notes précédées de son indice.
+Enfin, afficher la moyenne sous ce format : « Moyenne = 39 / 3 = 13 »
+
+Exo 8 :
+Demander à l’utilisateur de saisir un nombre de notes indéterminé (-1 pour stop), en stockant ces notes dans un tableau.
+Afficher ensuite la note la plus basse.
+Faire deux boucles : une pour remplir le tableau, une autre pour trouver la note la plus basse.
+

@@ -232,8 +232,41 @@ Afficher la moyenne de ces notes
 Variables
 Algo
 	somme = 0
-	TANT QUE 
-		note = saisir "Note " CONCAT indice + 1
+	note = saisir "Note 1 (-1 pour arrêter)"
+	SI note != -1
 		somme = somme + note
+		note = saisir "Note 2 (-1 pour arrêter)"
+		SI note != -1
+			somme = somme + note
+			note = saisir "Note 3 (-1 pour arrêter)"
+			SI note != -1
+				somme = somme + note
+				note = saisir "Note 4 (-1 pour arrêter)"
+			FIN SI
+		FIN SI
+	FIN SI
+	
+	nbNotes = 0
+	note = saisir "Note 1 (-1 pour arrêter)"
+	TANT QUE note != -1
+		nbNotes = nbNotes + 1
+		somme = somme + note
+		note = saisir "Note " CONCAT nbNotes+1 CONCAT "(-1 pour arrêter)"
 	FIN TANT QUE 
+	
+	SI nbNotes != 0
+		moyenne = somme / nbNotes
+		afficher moyenne
+	SINON
+		afficher "Vous n'avez saisi aucune note"
+	FIN SI
+	
+	nbNotes = 0 
+	REPETER
+		note = saisir "Note 1 (-1 pour arrêter)"
+		SI note != -1
+			nbNotes = nbNotes + 1
+			somme = somme + note
+		FIN SI
+	TANT QUE note != -1
 Fin algo
