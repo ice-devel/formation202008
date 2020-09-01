@@ -45,9 +45,71 @@ Demander à l’utilisateur de saisir des notes, et de taper -1 pour stopper.
 Stocker chacune des notes saisies dans un tableau. Ensuite (une fois sorti de la boucle, après la saisie -1),
 Afficher chacune des notes précédées de son indice.
 Enfin, afficher la moyenne sous ce format : « Moyenne = 39 / 3 = 13 »
+Variables
+	note: entier
+	notes: entier
+	somme: entier
+Algo
+	note = saisir "Veuillez saisir une note"
+	TANT QUE note != -1
+		ajouter note dans notes
+		note = saisir "Veuillez saisir la note suivante"
+	FIN TANT QUE
+	
+	somme = 0
+	POUR i DE 0 à LONGUEUR(notes)-1 PAR PAS DE 1
+		afficher i CONCAT " : " CONCAT notes[i]
+		somme = somme + note[i]
+	FIN POUR 
+	
+	moyenne = somme / LONGUEUR(notes)
+	afficher "Moyenne = " CONCAT somme CONCAT " / " CONCAT LONGUEUR(notes) CONCAT " = "  
+Fin algo
 
 Exo 8 :
 Demander à l’utilisateur de saisir un nombre de notes indéterminé (-1 pour stop), en stockant ces notes dans un tableau.
 Afficher ensuite la note la plus basse.
 Faire deux boucles : une pour remplir le tableau, une autre pour trouver la note la plus basse.
+
+Variables
+	note: entier
+	notes: tableau d'entier
+	minimum: entier
+Algo
+	note = saisir "Veuillez saisir une note"
+	TANT QUE note != -1
+		ajouter note dans notes
+		note = saisir "Veuillez saisir la note suivante"
+	FIN TANT QUE
+	
+	minimum = notes[0]
+	POUR i DE 1 à LONGUEUR(notes)-1 PAR PAS DE 1
+		SI notes[i] < minimum
+			minimum = notes[i]
+		FIN SI
+	FIN POUR
+Fin algo
+
+Exo 9 :
+Demander à l’utilisateur de saisir un nombre de notes indéterminé (-1 pour stop), en stockant ces notes dans un tableau.
+Afficher ensuite la note la plus haute.
+Faire deux boucles : une pour remplir le tableau, une autre pour trouver la note la plus haute.
+
+Exo supp:
+Demander à l’utilisateur de saisir un chiffre entre 1 et 5
+Tant qu’il ne saisit pas un chiffre entre 1 et 5 (par exemple 6 ou 0), il faut lui redonner la main pour qu’il saisisse à nouveau un chiffre entre 1 et 5
+Afficher le carré de ce chiffre : il tape 5, il faut afficher le résultat de 5 * 5 
+
+
+Exo 15
+Ecrire l’algorithme qui affiche si un mot est un palindrome (kayak, non)
+
+Variables
+	mot: chaine
+Algo
+	mot = saisir "Saisissez un mot"
+	// écrire le code qui dit si oui ou non ce mot est un palindrome
+Fin algo
+
+
 
