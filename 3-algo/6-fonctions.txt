@@ -149,4 +149,172 @@ Debut algo
 	sayHello(faux,faux,"Tom") // c'est n'imp
 Fin algo
 
+Exercices 
+•	Créer une fonction qui multiplie deux nombres (passés en paramètre) entre eux et retourne le résultat. Utiliser cette fonction dans un algo principal et afficher le résultat.
+Variables
+	produit: entier
+Début Fonction multiplication(nb1:entier, nb2:entier)
+	produit = nb1 * nb2
+	retourner produit
+Fin fonction
+
+Variables
+	nombre1: entier
+	nombre2: entier
+	result: entier
+Debut algo
+	nombre1 = saisir "Saisir le premier nombre"
+	nombre2 = 14
+	result = multiplication(nombre1, nombre2)
+	afficher result
+Fin algo
+
+•	Créer une fonction qui prend un âge en paramètre et retourne si oui ou non cet âge est celui d’une personne majeure.
+Utilisez cette fonction dans un algo principal, et afficher « Vous êtes majeur » si renvoie vrai, « Vous êtes mineur » sinon.
+Variables
+Debut fonction isMajeur(age:entier)
+	SI age >= 18
+		retourner vrai
+	SINON 
+		retourner faux
+	FIN SI
+Fin fonction
+
+Variables	
+	age:entier
+	majeur: booleen
+Debut algo
+	age = saisir "Quel est ton age ?"
+	majeur = isMajeur(age)
+	SI majeur == vrai
+		Afficher "Vous êtes majeur"
+	SINON
+		Afficher "Vous êtes mineur"
+	FIN SI
+	
+	age = saisir "Ton age ?"
+	SI isMajeur(age)
+		Afficher "Vous êtes majeur"
+	SINON
+		Afficher "Vous êtes mineur"
+	FIN SI
+Fin algo
+
+•	Créer une fonction qui affiche tous les éléments d’un tableau passé en paramètre. Ensuite dans un algo principal, créer un tableau avec quelques valeurs, et utilisez la fonction pour afficher ces valeurs
+Variables
+	i: entier
+Debut fonction afficheTableau(notes:tableau d'entier)
+	POUR i de 0 à LONGUEUR(notes)-1 PAR PAS DE 1
+		afficher notes[i]
+	FIN POUR
+Fin fonction
+
+Variables
+	listeNotes: tableau entier
+	listeEntiers: tableau entier
+Algo
+	ajouter 10 dans listeNotes
+	ajouter 20 dans listeNotes
+	afficherTableau(listeNotes)
+	
+
+	ajouter 12 dans listeEntiers
+	ajouter 23 dans listeEntiers
+	ajouter 43 dans listeEntiers
+	afficheTableau(listeEntiers)
+Fin algo
+
+Créer une fonction qui dit si oui ou non une chaine de caractère (passée en paramètre) possède 5 caractères. LONGUEUR(chaine)
+Utilisez ensuite cette fonction dans un algo principal
+Variables
+	verif: booleen
+Debut fonction hasFiveChars(word:chaine)
+	// V1
+	SI longueur(word) == 5
+		verif = vrai
+		retourner verif
+	SINON
+		verif = faux
+		retourner verif
+	FIN SI
+	
+	// V2 
+	SI longueur(word) == 5
+		verif = vrai
+	SINON
+		verif = faux
+	FIN SI
+	
+	retourner verif
+	
+	// V3 
+	SI longueur(word) == 5
+		retourner vrai
+	SINON
+		retourner faux
+	FIN SI
+	
+	// V4 
+	verif = longueur(word) == 5 ? vrai : faux
+	retourner verif
+	
+	// V5 
+	verif = longueur(word) == 5
+	retourner verif
+	
+	// V6
+	retourner longueur(word) == 5
+
+Fin fonction
+
+Adaptez l'exercice du palindrome : transformer l'algo pour créer une fonction
+qui prend une chaine en paramètre et dit si oui ou non cette chaine est un palindrome
+Dans un algo principal, demandez deux mots à l'utilisateur
+et afficher à l'écran pour chacun de ces mots si c'est un palindrome ou non
+
+Variables
+	i: entier
+	indexMax: entier
+	isPalin: booleen
+Debut fonction isPalindrome(word:chaine)
+	i = 0
+	indexMax = ROUND((LONGUEUR(word)-1)/2 - 1)
+	isPalin = vrai 
+	TANT QUE i <= indexMax ET isPalin
+		SI  word[i] != word[LONGUEUR(word)-1-i]
+			isPalin = faux
+		FIN SI
+		i = i + 1	
+	FIN TANT QUE
+	
+	retourner isPalin
+Fin fonction
+
+Variables
+	verif: booleen
+Algo
+	mot = saisir "Saisissez un mot"
+	
+	verif = isPalindrome(mot)
+
+	SI verif
+		afficher "palindrome"
+	SINON
+		afficher "papalindrome"
+	FIN SI
+	
+	// etc.. du code, du code, et du code
+	
+	mot2 = saisir "Saisissez un mot"
+	
+	verif = isPalindrome(mot2)
+
+	SI verif
+		afficher "palindrome"
+	SINON
+		afficher "papalindrome"
+	FIN SI
+Fin algo
+
+
 
