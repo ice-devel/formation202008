@@ -1,0 +1,152 @@
+Les FONCTIONS
+
+I - C'est quoi ?
+Une fonction c'est un ensemble d'instructions auquel on va donner un nom.
+On va pouvoir réutiliser cet ensemble d'instructions à plusieurs endroits sans avoir besoin de le récrire.
+
+Une fonction peut avoir des paramètres d'entrée, et avoir une valeur de retour.
+Il y a fort longtemps, on différenciait les procédures des fonctions.
+Une procédure : ensemble d'instructions
+Une fonction : ensemble d'instructions + valeur de retour
+
+II - utilisation basique
+Variables
+Debut fonction sayHello()
+	afficher "HELLO"
+Fin fonction
+
+Variables
+Algo
+	sayHello()
+	sayHello()
+	sayHello // sans parenthèse, la fonction n'est pas exécutée
+Fin algo
+
+III - variables locales / portée locale
+Variables
+	// les variables d'une fonction ne sont accessibles que dans cette fonction
+	chiffre1: entier
+	chiffre2: entier
+	somme: entier
+Debut fonction add5and10()
+	chiffre1 = 5
+	chiffre2 = 10
+	somme = chiffre1 + chiffre2
+	somme = 2
+Fin fonction
+
+Variables
+	name: chaine
+	somme: entier
+Algo
+	name = saisir "C'est quoi ton petit nom" 
+	somme = 43
+	add5and10()
+	
+	afficher somme // affiche 43
+	afficher chiffre1 // plantage : la variable n'existe pas
+Fin algo
+
+IV - Valeur de retour
+Variables
+	chiffre1: entier
+	chiffre2: entier
+	somme: entier
+Debut fonction add()
+	chiffre1 = 10
+	chiffre2 = 3
+	somme = chiffre1 + chiffre2
+	
+	retourner somme
+Fin fonction
+
+Variables
+	resultat: entier
+	resultat2: entier
+Algo
+	afficher "Bonjour"
+	resultat = add()
+	afficher resultat // affiche 13
+	
+	resultat2 = add()
+	afficher resultat2 // affiche 13
+	
+	afficher add() // affiche 13
+	
+	SI 15 == add()
+		// on rentre ici ? NON
+	FIN SI
+Fin algo
+
+V - Les paramètres d'entrées
+Les paramètres d'une fonction sont des valeurs qui seront passées
+lors de l'appel de la fonction (dans l'algo principal par exemple)
+
+Variables
+	somme: entier
+Debut fonction add(chiffre1:entier, chiffre2:entier)
+	somme = chiffre1 + chiffre2
+	retourner somme
+	retourner 15 // cette instruction n'est jamais exécutée puisque la fonction s'est arrêtée lors du premier "retourner"
+Fin fonction
+
+Variables 
+	resultat: entier
+	nb1: entier
+	nb2: entier
+Algo
+	resultat = add() // plantage : fonction attend 2 paramètres que je ne lui passe pas
+	
+	resultat = add(15, 20) 
+	afficher resultat // affiche 35
+	
+	resultat = add(21, 5)
+	afficher resultat // affiche 26
+	
+	nb1 = 2
+	nb2 = 3
+	resultat = add(nb1, nb2)
+	afficher resultat // affiche 5
+	
+	nb1 = saisir "Chiffre 1 SVP"
+	nb2 = saisir "Chiffre 2 SVP"
+	resultat = add(nb1, nb2)
+	afficher resultat // affiche ?? On ne sait pas à l'avance puisque que ça dépend de ce que l'utilisateur va saisir
+Fin algo
+
+VI - paramètres facultatifs
+Variables
+	// rendre un paramètre facultatif consiste à lui donner une 
+	// valeur par défaut (directement entre les parenthèses dans la plupart des langages)
+	// on ne peut avoir des facultatifs avant des obligatoires
+Debut fonction sayHello(name: chaine, upper:booleen=faux, surprised:booleen=faux)
+	SI upper == vrai
+		afficher "HELLO " CONCAT upper(name)
+	SINON
+		afficher "Hello " CONCAT name
+	FIN SI
+	SI surprised == vrai
+		afficher "!"
+	FIN SI
+Fin fonction
+
+Variables
+	name: chaine
+Debut algo
+	name = saisir "Ton prénom ?"
+	sayHello(name)
+	
+	sayHello("Fab", faux) // affiche Hello Fab
+	sayHello("Fab", vrai) // affiche HELLO FAB
+	sayHello("Fab") // affiche Hello Fab
+	sayHello("Tom", faux, vrai) // afficher Hello Tom!
+	// il faut donner une valeur pour le 2eme paramètre (bien que facultatif) si l'on veut donner une valeur pour le troisième.
+	
+	// si les paramètres obligatoires se trouvaient après les paramètres facultatifs
+	// il faudrait du coup donner obligaoirement une valeur pour les facultatifs
+	avant de pouvoir une valeur pour les obligatoires : paradoxe du mauvais développeur
+
+	sayHello(faux,faux,"Tom") // c'est n'imp
+Fin algo
+
+
