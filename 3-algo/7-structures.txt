@@ -47,10 +47,36 @@ Algo
 	humain1.ville = "Lille"
 Fin algo
 
+Variables
+	Player : structure {
+			nom : chaine,
+			points : entier
+	}
+
+	players : tableau de Player
+	player : Player
+Debut algo
+	// récupération des données en bdd
+	Connexion au serveur de bdd (« localhost », « root », « 1234 »)
+	Choix de la base (« formation_m2i »)
+	players = Requête SQL (« SELECT name, points FROM player ORDER BY points DESC »)
+
+	// affichage des joueurs dans la page
+	POUR i de 0 à LENGTH(players)-1
+		player = players[i]
+		Afficher players[i].name CONCAT « : » CONCAT players[i].points CONCAT « <br> »
+	FIN POUR
+
+	POUR CHAQUE player DANS players
+		Afficher player.name CONCAT « : » CONCAT player.points CONCAT « <br> »
+	FIN POUR CHAQUE
+Fin algo
+
+
 
 Créer une structure pour le concept de joueur :
 il faut pour chaque joueur un nom, un nombre de points et un
 code postal.
-Dans un algo, déclarez deux joueurs, donner leur un nom, un nombre de points et un code postal puis afficher à l'écran
+Dans un algo, déclarez deux joueurs, donnez-leur un nom, un nombre de points et un code postal puis afficher à l'écran
 la différence de points entre les deux joueurs.
 
