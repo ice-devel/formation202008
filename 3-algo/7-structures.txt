@@ -1,0 +1,56 @@
+Les structures
+
+Les structures vont être des types de variables qu'on va nous même créer.
+
+Algo
+	nom = "toto"
+	prenom = "toto"
+	age = "15"
+	codePostal = "59000"
+	
+	nom2 = "gégé"
+	prenom2 = "bibi"
+	age2 = 69
+	codePostal2 = "59300"
+	
+	
+	prenom2 = "bibi2"
+	nom2 = "gégé2"
+	
+	afficher nom CONCAT prenom CONCAT etc.
+Fin algo
+
+Variables
+	// création du type de variable Personne
+	Personne: structure {
+		nom: chaine
+		prenom: chaine
+		age: entier
+		codePostal: chaine
+		ville: chaine
+	}
+	
+	humain1: Personne
+	humain2: Personne
+Algo
+	humain1.nom = "toto"
+	humain1.prenom = "toto"
+	
+	humain2.nom = "gégé"
+	humain2.prenom = "bibi"
+
+	afficher humain1.nom CONCAT humain1.prenom
+	afficher humain2.nom CONCAT humain2.prenom
+	
+	humain1.nom = "toto2"
+	humain1.prenom = "toto2"
+	humain1.ville = "Lille"
+Fin algo
+
+
+Créer une structure pour le concept de joueur :
+il faut pour chaque joueur un nom, un nombre de points et un
+code postal.
+Dans un algo, déclarez deux joueurs, donner leur un nom, un nombre de points et un code postal puis afficher à l'écran
+la différence de points entre les deux joueurs.
+

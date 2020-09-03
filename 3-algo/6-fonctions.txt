@@ -316,5 +316,59 @@ Algo
 	FIN SI
 Fin algo
 
+Exercice 14 -
+Créer une fonction servirBoisson qui affiche à l’écran « Voici un café », ou « Voici un thé » ou « Voici un cola ». La fonction prend une chaine de caractère en paramètre : c’est la boisson que l’on veut.
+Si le paramètre ne correspond ni à café, thé ou cola, il faut afficher « Désolé, on ne sert pas cette boisson ». Si le paramètre n’est pas passé, il faut servir par défaut un café.
+Debut fonction servirBoisson(boisson:chaine="café")
+	SELON boisson
+		CAS "café"
+			afficher "Voici un café"
+		CAS "thé"
+			afficher "Voici un thé"
+		CAS "cola"
+			afficher "Voici un colé"
+		DEFAUT
+			afficher "Désolé, on ne sert pas cette boisson"
+	FIN SELON
+Fin fonction
+
+Exercice 12
+Créer une fonction qui prend en paramètre un tableau, et qui retourne un nouveau tableau dont tous les éléments du premier ont été inversés. [1,3,2] => [2,3,1]
+
+Variables
+	newTab: tableau
+	i: entier
+Debut fonction inverse(tab:tableau)
+	0 4
+	1 3
+	2 2
+	3 1
+	4 0
+	// V1 
+	POUR i de 0 à LONGUEUR(tab)-1 PAR PAS DE 1
+		newTab[i] = tab[LONGUEUR(tab)-1-i]
+ 	FIN POUR
+	
+	// V2 
+	ajouter tab[4] dans newTab
+	ajouter tab[3] dans newTab
+	ajouter tab[2] dans newTab
+	ajouter tab[1] dans newTab
+	ajouter tab[0] dans newTab
+	POUR i de 0 à LONGUEUR(tab)-1 par pas de 1 
+		ajouter tab[LONGUEUR(tab)-1-i] dans newTab
+	FIN POUR 
+	
+	// V3
+	POUR i de LONGUEUR(tab)-1 à 0 par pas de -1 
+		ajouter tab[i] dans newTab
+	FIN POUR
+	
+	retourner newTab
+Fin fonction
+
+
+
+
 
 
