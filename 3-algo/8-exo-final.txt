@@ -1,10 +1,13 @@
 Ecrire l’algorithme qui :
--	Ajoute des produits respectant cette structure, dans un tableau 
+-	Ajoute des produits respectant cette structure,
+dans un tableau de Produit :
+
 Produit : structure {
 		Nom : chaine
 		Prix : entier
 }
-produits : tableau de Produit
+catalogue : tableau de Produit
+
 -	Il faut 4 produits : vélo 120€, Cadre 5€, Chaise 10€, Pull 20€
 -	Affiche ces produits en vente en les préfixant par un indice
 -	Donner la main à l’utilisateur pour lui demander quel produit il veut acheter : il choisit un produit grâce à son indice. Tant qu’il n’a pas saisi -1, on lui redonne la main pour qu’il puisse choisir d’autres produits (gestion de panier)
@@ -12,3 +15,40 @@ produits : tableau de Produit
 -	Puis lui donner la main pour qu’il nous dise avec combien d’argent il va payer
 -	S’il ne donne pas assez d’argent, on recommence l’étape précédent
 - S’il donne pile poil l’argent demandé ou plus, on lui dit merci et on lui rend si nécessaire la monnaie
+- créer au moins une fonction et l'utiliser
+
+Variables
+	Produit : structure {
+		nom : chaine
+		prix : entier
+	}
+	
+	velo: Produit
+	cadre: Produit
+	chaise: Produit
+	pull: Produit
+Algo
+	// création des produits puis insertion dans le catalogue
+	velo.nom = "Vélo"
+	velo.prix = 120
+	ajouter velo dans catalogue
+	
+	cadre.nom = "Cadre"
+	cadre.prix = 5
+	ajouter cadre dans catalogue
+	
+	chaise.nom = "Chaise"
+	chaise.prix = 10
+	ajouter chaise dans catalogue
+	
+	pull.nom = "pull"
+	pull.prix = 10
+	ajouter pull dans catalogue
+	
+	// affichage des produits depuis le catalogue
+	POUR i de 0 à LONGUEUR(catalogue)-1 PAR PAS DE 0
+		afficher (i+1) CONCAT catalogue[i].nom CONCAT catalogue[i].prix
+	FIN POUR
+Fin algo
+	
+
