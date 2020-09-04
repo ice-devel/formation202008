@@ -27,8 +27,15 @@ Variables
 	cadre: Produit
 	chaise: Produit
 	pull: Produit
+	
+	catalogue: tableau de Produit
+	panier: tableau de Produit
+	produitChoisi: Produit
+	prod: Produit
+	prixTotal: entier
 Algo
-	// création des produits puis insertion dans le catalogue
+	// I - création produit
+	// V1 sans fonction : création des produits puis insertion dans le catalogue
 	velo.nom = "Vélo"
 	velo.prix = 120
 	ajouter velo dans catalogue
@@ -42,13 +49,72 @@ Algo
 	ajouter chaise dans catalogue
 	
 	pull.nom = "pull"
-	pull.prix = 10
+	pull.prix = 20
 	ajouter pull dans catalogue
 	
+	// V2 avec fonction
+	// en deux ligne avec variable intermédiaire
+	prod = creerProduit("Vélo", 120)
+	ajouter prod dans catalogue
+	
+	prod = creerProduit("Cadre", 5)
+	ajouter prod dans catalogue
+	
+	// en une ligne
+	ajouter creerProduit("Chaise", 10) dans catalogue
+	ajouter creerProduit("Pull", 20) dans catalogue
+	
+	// II - suite
 	// affichage des produits depuis le catalogue
-	POUR i de 0 à LONGUEUR(catalogue)-1 PAR PAS DE 0
+	POUR i de 0 à LONGUEUR(catalogue)-1 PAR PAS DE 1
 		afficher (i+1) CONCAT catalogue[i].nom CONCAT catalogue[i].prix
+		
+		// avec une variable intermédiaire
+		currentProduct = catalogue[i]
+		afficher (i+1) CONCAT currentProduct.nom CONCAT currentProduct.prix
 	FIN POUR
+	
+	// donner la main à l'utilisateur pour remplir son panier
+	REPETER
+		choix = saisir "Quel produit voulez-vous ajouter à votre panier ? (-1 pour arrêter)"
+		SI choix != -1
+			// ajouter le produit dans le panier
+			produitChoisi = catalogue[choix-1]
+			ajouter produitChoisi dans panier
+		FIN SI
+	TANT QUE choix != -1
+	
+	// calculer et afficher le prix total
+	Afficher "Voici votre panier :"
+	prixTotal = 0
+	POUR CHAQUE prod DANS panier
+		afficher prod.nom CONCAT prod.prix
+		prixTotal = prixTotal + prod.prix
+	FIN POUR CHAQUE
+	
+	// lui demander la thune, l'argent, les billets, le flouz
+	argent = saisir "C'est l'heure de payer, tu donnes combien ?"
+	
+	// si pas assez d'argent on recommence l'étape précédente
+	TANT QUE argent < prixTotal 
+		argent = saisir "C'est pas assez guy, tu donnes combien budy ?"
+	FIN 
+	
+	// si monnaie à rendre
+	SI argent > prixTotal
+		monnaie = argent - prixTotal
+		afficher "Voici votre monnaie : " CONCAT monnaie
+	FIN SI
+	
+	afficher "merci orvoir"
 Fin algo
+
+Variables
+	newProduct: Produit
+Debut fonction creerProduit(name:chaine, price:entier)
+	newProduct.nom = name
+	newProduct.prix = price
+	retourner newProduct
+Fin Fonction
 	
 
